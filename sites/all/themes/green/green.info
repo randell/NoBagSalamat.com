@@ -1,0 +1,15 @@
+; $Id$
+name = NBS-green
+description = NBS green theme
+screenshot = images/screenshot.png
+version = 1.0
+core = 6.x
+engine = phptemplate
+
+; STYLES
+stylesheets[all][] = styles/style.css
+stylesheets[all][] = styles/style-nav.css
+stylesheets[all][] = styles/style-layout.css
+
+; SCRIPTS
+scripts[] = scripts/script.js

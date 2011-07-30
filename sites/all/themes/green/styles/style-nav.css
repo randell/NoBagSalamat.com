@@ -1,0 +1,101 @@
+/*
+ * @file style-nav.css
+ * @author Randell Benavidez (randell@randell.ph)
+ * @date September 19, 2008
+ */
+
+#nav {
+  background: url(../images/nav-bg.png);
+  height: 25px;
+  margin-top: 5px;
+}
+#menu-primary {
+  float: right;
+  padding-top: 5px;
+  display: block;
+  width: 520px;
+}
+#menu-primary ul {
+  margin: 0;
+  padding-left: 20px;
+  top: 10px;
+  right: 0;
+}
+#menu-primary ul li {
+  position: relative;
+  float: left;
+  list-style: none;
+  z-index: 5;
+  margin-left: 15px;
+}
+div#menu-primaryselected {
+  color: #fbf0bd;
+  text-decoration: underline;
+}
+#menu-primary ul li a:hover {
+  color: #fff0dd;
+}
+#menu-primary ul li a:hover div {
+  color: #fbf0bd;
+  text-decoration: underline;
+}
+/* dropdown */
+#menu-primary ul li ul {
+  display: none;
+}
+#menu-primary ul li.hover ul {
+  display: block;
+}
+#menu-primary ul li.hover a div {
+  color: #fbf0bd;
+  text-decoration: underline;
+}
+#menu-primary ul li.hover li a {
+  text-decoration: none;
+  color: #586956;
+}
+#menu-primary ul li div {
+  float: left;
+  height: 30px;
+  padding-top: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#menu-primary ul li a {
+  font: 12px sans-serif;
+  padding-top: 0px;
+  margin: 0px;
+  display: block;
+  color: #fff;
+}
+#menu-primary ul ul {
+  width: 95px;
+  clear: left;
+  display: none;
+  position: absolute;
+  margin-top: 5px;
+  padding-left: 0;
+  top: 10px;
+  left: 0;
+  background-color: #fff0dd;
+}
+#menu-primary ul ul div {
+  width: 180px;
+}
+#menu-primary ul ul a:link div,
+#menu-primary ul ul a:visited div{
+  color: #eee;
+  text-decoration: none;
+}
+#menu-primary ul ul a:hover div {
+  background-color: #fff0dd;
+  color: #ffffff;
+}
+#menu-primary ul ul li {  height: 22px;
+  border-bottom: 1px solid #539848;
+  background: #fff0dd;
+  width: 100%;
+  margin-left: 0px;
+  padding-top: 5px;
+  padding-left: 7px;
+}

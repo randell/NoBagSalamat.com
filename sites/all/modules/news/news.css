@@ -1,0 +1,43 @@
+/**
+ * @file news.css
+ * author Randell Benavidez (randell@randell.ph)
+ * date created: 20081015
+ * date modified: 
+ */
+.news {
+  width: 512px;
+  padding: 0 0 0 30px;
+}
+.news-header {
+  padding-top: 50px;
+}
+.clear {
+  clear: both;
+}
+.newss {  
+  width: 482px;
+  padding: 0 30px 0 30px;
+  margin-top: 50px;
+  margin-left: 0px;
+}
+.news-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  line-height: 30px;
+}
+.news-source {
+  font-style: italic;
+  font-weight: bold;
+  color: #fc950e;
+  margin-bottom: 40px;
+}
+.news-left {
+  float: left;
+}
+.news-right {
+  float: right;
+  margin-top: 120px;
+  width: 228px;
+  padding-right: 30px;
+}

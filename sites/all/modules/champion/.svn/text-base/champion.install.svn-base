@@ -1,0 +1,66 @@
+<?php
+/**
+ * @file champion.install
+ * author: Randell Benavidez (randell@randell.ph)
+ * date-created: 20080914
+ * date-updated: year-mm-dd "name" "description"
+ */
+
+/**
+ * Implementation of hook_enable().
+ */
+function champion_enable() {
+	drupal_set_message("champion module was enabled.");
+}
+
+/**
+ * Implementation of hook_disable().
+ */
+function champion_disable() {
+	drupal_set_message("champion module was disabled.");
+}
+
+/**
+ * Implementation of hook_schema()
+ */
+function champion_schema() {
+	$schema['champion'] = array(
+		'fields' => array(
+			'vid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+			'nid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+			'location' => array('type' => 'varchar', 'length' => 20, 'default' => ''),
+      'age' => array('type' => 'int', 'unsigned' => TRUE, 'default' => 0),
+      'profile' => array('type' => 'varchar', 'length' => 30, 'default' => ''),
+      'quote' => array('type' => 'varchar', 'length' => 50, 'default' => ''),
+      'champion_since' => array('type' => 'varchar', 'length' => 20, 'default' => ''),
+      'featured' => array('type' => 'int', 'unsigned' => TRUE, 'default' => 0),
+      'photo' => array('type' => 'varchar', 'length' => 100, 'default' => ''),
+		),
+		'indexes' => array(
+			'nid' => array('nid'),
+		),
+		'primary key' => array('vid'),
+	);
+
+	return $schema;
+}
+
+/**
+ * Implementation of hook_install()
+ */
+function champion_install() {
+	// Create tables.
+	drupal_install_schema('champion');
+	drupal_set_message('extended table for champion has been created');
+	// TODO: taxonomy
+}
+
+/**
+ * Implementation of hook_uninstall()
+ */
+function champion_uninstall() {
+	// Remove tables.
+	drupal_uninstall_schema('champion');
+}
+
+/* do not close php ?>*/

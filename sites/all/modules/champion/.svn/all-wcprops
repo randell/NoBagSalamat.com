@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/39/sites/all/modules/champion
+END
+champion-theme.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/designbrew_nbs/!svn/ver/9/sites/all/modules/champion/champion-theme.tpl.php
+END
+champion.module
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/designbrew_nbs/!svn/ver/39/sites/all/modules/champion/champion.module
+END
+champion.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/designbrew_nbs/!svn/ver/37/sites/all/modules/champion/champion.tpl.php
+END
+champion.install
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/designbrew_nbs/!svn/ver/22/sites/all/modules/champion/champion.install
+END
+champion.css
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/designbrew_nbs/!svn/ver/14/sites/all/modules/champion/champion.css
+END
+node-champion.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/designbrew_nbs/!svn/ver/30/sites/all/modules/champion/node-champion.tpl.php
+END
+champion.info
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/designbrew_nbs/!svn/ver/9/sites/all/modules/champion/champion.info
+END
+champion-list.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/designbrew_nbs/!svn/ver/30/sites/all/modules/champion/champion-list.tpl.php
+END

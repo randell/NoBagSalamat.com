@@ -1,0 +1,7 @@
+; $Id$
+package = NBS
+name = partner
+description = New partner-type.
+core = 6.x
+dependencies[] = taxonomy
+dependencies[] = comment

@@ -1,0 +1,416 @@
+/*
+ * @file style-layout.css
+ * @author Randell Benavidez (randell@randell.ph)
+ * @date 20080911
+ */
+
+/* HTML elements */
+
+body {
+  background: #efefef;
+  margin: 0;
+}
+
+/* DIVs */
+
+#container {
+  background: #fff;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#header {
+  background: url(../images/header-bg.jpg) no-repeat;
+  height: 212px;
+}
+#logo {
+  padding-top: 20px;
+  padding-left: 40px;
+}
+#front-1 {
+  background: url(../images/front-1-bg.jpg) no-repeat;
+  height: 202px;
+  margin-top: 2px;
+}
+#front-1-1 {
+  width: 470px;
+  float: right;
+}
+#quote-1 {
+  color: #44300d;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 20px 20px 10px 20px;
+}
+#quote-2 {
+  color: #452e0f;
+  font-size: 12px;
+  text-align: right;
+  padding-right: 40px;
+}
+#quote-3 {
+  color: #d8850f;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+  padding-right: 40px;
+}
+#front-1-2 {
+  width: 470px;
+  float: right;;
+}
+#oneless-1 {
+  color: #576a57;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 6px 0 5px 20px;
+}
+#oneless-2 {
+  color: #586957;
+  font-size: 12px;
+  padding: 0 70px 0 20px;
+  line-height: 16px;
+}
+#oneless-3 {
+  color: #fc9400;
+  font-weight: bold;
+  padding: 0 0 0 20px; 
+}
+#front-2 {
+  background: url(../images/front-2-bg.jpg) repeat-x;
+  min-height: 210px;
+}
+#front-2-1 {
+  width: 420px;
+  float: left;
+  padding-top: 40px;
+  padding-left: 30px;
+}
+#featured-1 {
+  float: left;
+  background: url(../images/front-featured-champion-bg.gif) no-repeat;
+  width: 181px;
+  height: 181px;
+  margin-top: 25px;
+}
+#featured-1 img {
+  width: 96px;
+  height: 96px;
+  margin: 15px 0 0 13px;
+  border: 2px solid #ddd;
+}
+#featured-2 {
+  background: url(../images/brown-bg.gif) no-repeat;
+  margin-top: 15px; 
+  margin-left: 50px;
+}
+#featured-2-1 {
+  width: 320px;
+  height: 191px;
+  color: #fff;
+  padding-top: 5px;
+}
+#featured-2-1 a,
+#featured-2-1 a:hover,
+#featured-2-1 a:visited {
+  color: #fcddaf;
+  font-weight: bold;
+}
+#front-2-2 {
+  color: #576856;
+  width: 350px;
+  float: right;
+  margin-top: 130px;
+}
+#asofimg {
+  float: left;
+  margin-top: 20px;
+}
+#asofimg img {
+  width: 100px;
+  height: 100px;
+}
+#asofdate {
+  padding-left: 120px;
+  font-size: 12px;
+  font-weight: bold;
+}
+#asofshortline {
+  padding-left: 120px;
+}
+#asofshortline img {
+  width: 145px;
+  height: 1px;
+}
+#asofnumber {
+  margin-top: 10px;
+  padding-left: 120px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 30px;
+  line-height: 26px;
+}
+.asofnumber {
+  display: inline;
+  font-size: 24px;
+}
+#front-2-3 {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  text-align: center;
+}
+#front-3 {
+  margin-top: 10px;
+  color: #576856;
+}
+#front-3-1 {
+  width: 221px;
+  float: left;
+  padding-left: 30px;
+  padding-right: 15px;
+}
+#front-pin-1 {
+  float: left;
+}
+#front-pin-2 {
+  padding-top: 20px;
+  color: #d67e03;
+  font-size: 16px;
+  font-weight: bold;
+}
+#front-pin-3 {
+  clear: both;
+}
+#front-pin-4 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#front-pin-5 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#front-pin-5 a,
+#front-pin-5 a:hover,
+#front-pin-5 a:visited {
+  font-weight: bold;
+}
+#front-3-2 {
+  width: 221px;
+  float: left;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+#front-bag-1 {
+  float: left;
+}
+#front-bag-2 {
+  padding-top: 20px;
+  color: #d67e03;
+  font-size: 16px;
+  font-weight: bold;
+}
+#front-bag-3 {
+  clear: both;
+}
+#front-bag-4 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#front-bag-5 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#front-bag-5 a,
+#front-bag-5 a:hover,
+#front-bag-5 a:visited {
+  font-weight: bold;
+}
+#front-3-3 {
+  width: 238px;
+  float: left;
+  padding-left: 15px;
+  padding-right: 30px;
+}
+#front-news-1 {
+  float: left;
+}
+#front-news-2 {
+  padding-top: 20px;
+  color: #d67e03;
+  font-size: 16px;
+  font-weight: bold;
+}
+#front-news-3 {
+  clear: both;
+}
+#front-news-4 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#front-news-5 {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+#front-news-5 a,
+#front-news-5 a:hover,
+#front-news-5 a:visited {
+  font-weight: bold;
+}
+#front-3-4 {
+  clear: both;
+}
+#footer-1 {
+  background: url(../images/trees.gif) no-repeat bottom right;
+  height: 125px;
+}
+#footer-2 {
+  background: #4d974c;
+  height: 54px;
+  border-top: 3px solid #b3bb96;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#copyright {
+  width: 390px;
+  float: left;
+  padding-top: 20px;
+}
+#poweredby {
+  width: 390px;
+  float: right;
+  text-align: right;
+}
+.sub {
+  background: url(../images/sub-bg.png) repeat-x;
+  margin-top: 2px;
+}
+
+/* About NBS */
+
+#about {
+  padding: 50px 30px 0px 30px;
+}
+#about-header {
+  padding-bottom: 30px;
+}
+#about-left {
+  float: left;
+  width: 470px;
+}
+#about-left-1-1 {
+  background: url(../images/about-featured-champion-bg.gif) no-repeat;
+  float: left;
+  width: 146px;
+  height: 146px;
+  margin-top: 10px;
+}
+#about-left-1-1 img {
+  margin-top: 16px;
+  margin-left: 16px;
+  border: 2px solid #ddd;
+}
+#about-left-1-2 {
+  background: url(../images/about-brown-bg.gif) no-repeat;
+  width: 343px;
+  height: 177px;
+  margin-left: 120px;
+}
+#about-left-1-2-1 {
+  color: #fff;
+  font-weight: bold;
+  line-height: 16px;
+  padding-top: 35px;
+  padding-left: 100px;
+  padding-right: 20px;
+}
+#about-left-2 {
+  margin-top: 30px;
+}
+#about-left-2-2 {
+  color: #fc950e;
+  font-weight: bold;
+  width: 100%;
+  text-align: right;
+}
+#about-right {
+  float: right;
+  width: 230px;
+}
+
+/* The Pin */
+
+#the-pin {
+  padding: 50px 30px 0px 30px;
+}
+#the-pin-header {
+  padding-bottom: 30px;
+}
+#the-pin-left {
+  float: left;
+  width: 170px;
+}
+#the-pin-right {
+  float: left;
+  width: 530px;
+  padding-left: 30px;
+}
+
+/* The Bag */
+
+#the-bag {
+  padding: 50px 30px 0px 30px;
+}
+#the-bag-header {
+  padding-bottom: 30px;
+}
+#the-bag-left {
+  float: left;
+  width: 170px;
+}
+#the-bag-right {
+  float: left;
+  width: 530px;
+  padding-left: 30px;
+}
+
+/* Why Bother? */
+
+#why-bother {
+  padding: 50px 30px 0px 30px;
+}
+#why-bother-header {
+  padding-bottom: 30px;
+}
+#why-bother-content {
+  
+}
+
+/* Make the Pledge */
+
+#make-the-pledge {
+  padding: 50px 30px 0px 30px;
+}
+#make-the-pledge-header {
+  padding-bottom: 30px;
+}
+#make-the-pledge-left {
+  float: left;
+  width: 200px;
+}
+#make-the-pledge-left img {
+  border: 2px solid #ddd;
+}
+#make-the-pledge-center {
+  float: left;
+  width: 250px;
+  padding-left: 20px;
+}
+#make-the-pledge-right {
+  float: left;
+  width: 230px;
+  padding-left: 30px;
+}

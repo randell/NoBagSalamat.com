@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/designbrew_nbs/!svn/ver/1/modules/book
+END
+book-export-html.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book-export-html.tpl.php
+END
+book.install
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book.install
+END
+book-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book-rtl.css
+END
+book.pages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book.pages.inc
+END
+book.css
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book.css
+END
+book-node-export-html.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book-node-export-html.tpl.php
+END
+book.info
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book.info
+END
+book-all-books-block.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book-all-books-block.tpl.php
+END
+book.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book.admin.inc
+END
+book-navigation.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book-navigation.tpl.php
+END
+book.module
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/designbrew_nbs/!svn/ver/1/modules/book/book.module
+END

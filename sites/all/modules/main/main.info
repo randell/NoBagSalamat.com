@@ -1,0 +1,4 @@
+package = NBS
+name = main
+description = "No Bag, Salamat! main module"
+core = 6.x

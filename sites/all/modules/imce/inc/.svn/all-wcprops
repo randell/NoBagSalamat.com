@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/7/sites/all/modules/imce/inc
+END
+admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/designbrew_nbs/!svn/ver/7/sites/all/modules/imce/inc/admin.inc
+END
+subdir.inc
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/designbrew_nbs/!svn/ver/7/sites/all/modules/imce/inc/subdir.inc
+END
+core_profiles.inc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/designbrew_nbs/!svn/ver/7/sites/all/modules/imce/inc/core_profiles.inc
+END
+js.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/designbrew_nbs/!svn/ver/7/sites/all/modules/imce/inc/js.inc
+END
+page.inc
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/designbrew_nbs/!svn/ver/7/sites/all/modules/imce/inc/page.inc
+END

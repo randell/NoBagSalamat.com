@@ -1,0 +1,7 @@
+; $Id$
+package = NBS
+name = news
+description = New news-type.
+core = 6.x
+dependencies[] = taxonomy
+dependencies[] = comment

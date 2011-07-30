@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/designbrew_nbs/!svn/ver/1/modules/forum
+END
+forum.css
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum.css
+END
+forums.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forums.tpl.php
+END
+forum-topic-list.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum-topic-list.tpl.php
+END
+forum-icon.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum-icon.tpl.php
+END
+forum.info
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum.info
+END
+forum-list.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum-list.tpl.php
+END
+forum-topic-navigation.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum-topic-navigation.tpl.php
+END
+forum.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum.admin.inc
+END
+forum-submitted.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum-submitted.tpl.php
+END
+forum.module
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum.module
+END
+forum.install
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum.install
+END
+forum-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum-rtl.css
+END
+forum.pages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/forum/forum.pages.inc
+END

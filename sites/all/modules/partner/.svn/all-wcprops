@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/40/sites/all/modules/partner
+END
+partner-theme.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/designbrew_nbs/!svn/ver/16/sites/all/modules/partner/partner-theme.tpl.php
+END
+partner.module
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/designbrew_nbs/!svn/ver/40/sites/all/modules/partner/partner.module
+END
+partner.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/designbrew_nbs/!svn/ver/16/sites/all/modules/partner/partner.tpl.php
+END
+partner.install
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/designbrew_nbs/!svn/ver/16/sites/all/modules/partner/partner.install
+END
+node-partner.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/designbrew_nbs/!svn/ver/27/sites/all/modules/partner/node-partner.tpl.php
+END
+partner.css
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/designbrew_nbs/!svn/ver/16/sites/all/modules/partner/partner.css
+END
+partner.info
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/designbrew_nbs/!svn/ver/16/sites/all/modules/partner/partner.info
+END
+partner-list.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/designbrew_nbs/!svn/ver/32/sites/all/modules/partner/partner-list.tpl.php
+END

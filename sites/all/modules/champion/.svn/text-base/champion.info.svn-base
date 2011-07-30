@@ -1,0 +1,7 @@
+; $Id$
+package = NBS
+name = champion
+description = New champion-type.
+core = 6.x
+dependencies[] = taxonomy
+dependencies[] = comment

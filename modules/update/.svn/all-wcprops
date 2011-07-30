@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/designbrew_nbs/!svn/ver/1/modules/update
+END
+update.compare.inc
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update.compare.inc
+END
+update.fetch.inc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update.fetch.inc
+END
+update.report.inc
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update.report.inc
+END
+update.module
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update.module
+END
+update.install
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update.install
+END
+update-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update-rtl.css
+END
+update.css
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update.css
+END
+update.settings.inc
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update.settings.inc
+END
+update.info
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/1/modules/update/update.info
+END

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/designbrew_nbs/!svn/ver/1/modules/poll
+END
+poll.info
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll.info
+END
+poll-results-block.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll-results-block.tpl.php
+END
+poll-bar-block.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll-bar-block.tpl.php
+END
+poll-vote.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll-vote.tpl.php
+END
+poll-results.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll-results.tpl.php
+END
+poll.module
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll.module
+END
+poll.install
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll.install
+END
+poll-bar.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll-bar.tpl.php
+END
+poll-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll-rtl.css
+END
+poll.pages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll.pages.inc
+END
+poll.css
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/designbrew_nbs/!svn/ver/1/modules/poll/poll.css
+END

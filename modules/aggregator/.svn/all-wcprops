@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator
+END
+aggregator-summary-items.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator-summary-items.tpl.php
+END
+aggregator.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator.admin.inc
+END
+aggregator-item.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator-item.tpl.php
+END
+aggregator-wrapper.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator-wrapper.tpl.php
+END
+aggregator-feed-source.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator-feed-source.tpl.php
+END
+aggregator.module
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator.module
+END
+aggregator.install
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator.install
+END
+aggregator-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator-rtl.css
+END
+aggregator.pages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator.pages.inc
+END
+aggregator.css
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator.css
+END
+aggregator.info
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator.info
+END
+aggregator-summary-item.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/designbrew_nbs/!svn/ver/1/modules/aggregator/aggregator-summary-item.tpl.php
+END

@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/designbrew_nbs/!svn/ver/1/modules/system
+END
+admin.css
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/designbrew_nbs/!svn/ver/1/modules/system/admin.css
+END
+maintenance-page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/designbrew_nbs/!svn/ver/1/modules/system/maintenance-page.tpl.php
+END
+system.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system.admin.inc
+END
+system.install
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system.install
+END
+defaults-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/designbrew_nbs/!svn/ver/1/modules/system/defaults-rtl.css
+END
+defaults.css
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/system/defaults.css
+END
+system.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system.js
+END
+system-menus-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system-menus-rtl.css
+END
+page.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/system/page.tpl.php
+END
+system-menus.css
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system-menus.css
+END
+system.module
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system.module
+END
+maintenance.css
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/designbrew_nbs/!svn/ver/1/modules/system/maintenance.css
+END
+system-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system-rtl.css
+END
+system.css
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system.css
+END
+box.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/1/modules/system/box.tpl.php
+END
+system.info
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/1/modules/system/system.info
+END
+block.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/designbrew_nbs/!svn/ver/1/modules/system/block.tpl.php
+END
+admin-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/designbrew_nbs/!svn/ver/1/modules/system/admin-rtl.css
+END

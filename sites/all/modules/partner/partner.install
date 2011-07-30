@@ -1,0 +1,61 @@
+<?php
+/**
+ * @file partner.install
+ * author: Randell Benavidez (randell@randell.ph)
+ * date-created: 20081018
+ * date-updated: year-mm-dd "name" "description"
+ */
+
+/**
+ * Implementation of hook_enable().
+ */
+function partner_enable() {
+	drupal_set_message("Partner module was enabled.");
+}
+
+/**
+ * Implementation of hook_disable().
+ */
+function partner_disable() {
+	drupal_set_message("Partner module was disabled.");
+}
+
+/**
+ * Implementation of hook_schema()
+ */
+function partner_schema() {
+	$schema['partner'] = array(
+		'fields' => array(
+			'vid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+			'nid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+			'url' => array('type' => 'varchar', 'length' => 100, 'default' => ''),
+      'logo' => array('type' => 'varchar', 'length' => 100, 'default' => ''),
+		),
+		'indexes' => array(
+			'nid' => array('nid'),
+		),
+		'primary key' => array('vid'),
+	);
+
+	return $schema;
+}
+
+/**
+ * Implementation of hook_install()
+ */
+function partner_install() {
+	// Create tables.
+	drupal_install_schema('partner');
+	drupal_set_message('extended table for partner has been created');
+	// TODO: taxonomy
+}
+
+/**
+ * Implementation of hook_uninstall()
+ */
+function partner_uninstall() {
+	// Remove tables.
+	drupal_uninstall_schema('partner');
+}
+
+/* do not close php ?>*/

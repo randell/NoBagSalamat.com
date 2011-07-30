@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/designbrew_nbs/!svn/ver/1/modules/openid
+END
+login-bg.png
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/login-bg.png
+END
+openid.module
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/openid.module
+END
+openid.install
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/openid.install
+END
+openid.pages.inc
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/openid.pages.inc
+END
+openid.css
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/openid.css
+END
+openid.inc
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/openid.inc
+END
+openid.info
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/openid.info
+END
+xrds.inc
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/xrds.inc
+END
+openid.js
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/designbrew_nbs/!svn/ver/1/modules/openid/openid.js
+END

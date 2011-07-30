@@ -1,0 +1,76 @@
+/**
+ * @file champion.css
+ * author Randell Benavidez (randell@randell.ph)
+ * date created: 20081015
+ * date modified: 
+ */
+.champion {
+  width: 512px;
+  padding: 0 0 0 30px;
+}
+.champions-header {
+  padding-top: 50px;
+}
+.featured {
+  margin-top: 30px;  
+}
+.featured-1 {
+  background: url(images/champion-pic-bg.gif);
+  float: left;
+  width: 181px;
+  height: 181px;
+}
+.photo128 {
+  background: #fff;
+  width: 128px;
+  height: 128px;
+  margin-top: 27px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.photo128 img {
+  width: 128px;
+  height: 128px;
+  border: 2px solid #ddd;
+}
+.featured-2 {
+  float: right;
+  width: 239px;
+  margin-left: 30px;
+  float: left;
+}
+.clear {
+  clear: both;
+}
+.champions {  
+  width: 512px;
+  padding: 0 0 0 30px;
+  margin-top: 50px;
+  margin-left: 0px;
+}
+.photo96 {
+  width: 96px;
+  height: 96px;
+  margin-top: 27px;
+  margin-left: 0px;
+  display: inline;
+}
+.photo96 img {
+  width: 96px;
+  height: 96px;
+  border: 2px solid #ddd;
+}
+.pager a, .pager a:hover, .pager a:visited,
+.pager-current, .pager-item, .pager-next, .pager-last {
+  color: #fc950e;
+  font-weight: bold;
+}
+.champions-left {
+  float: left;
+}
+.champions-right {
+  float: right;
+  margin-top: 120px;
+  width: 228px;
+  padding-right: 30px;
+}

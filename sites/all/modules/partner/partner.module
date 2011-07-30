@@ -1,0 +1,382 @@
+<?php
+/**
+ * @file partner.module
+ * author: Randell Benavidez (randell@randell.ph)
+ * date-created: 20080918
+ * date-updated: year-mm-dd "name" "description"
+ */
+
+/**
+required hooks for new node-type:
+	* hook_node_info()
+	* hook_perm()
+	* hook_access()
+	* hook_form()
+	* hook_insert()
+	* hook_update()
+	* hook_delete()
+	* hook_validate()
+	* hook_nodeapi()
+	* hook_view()
+	* hook_load()
+*/
+
+/**
+ * Implementation of hook_node_info().
+ */
+function partner_node_info() {
+	return array(
+		'partner' => array(
+			'name' => t('Partner'),
+			'module' => 'partner',
+			'description' => t("Create a new partner using this partner content-type"),
+			'has_title' => TRUE, 
+			'title_label' => t('Name'),
+			'has_body' => FALSE,
+			'locked' => TRUE,
+		)
+	);
+}
+
+/**
+ * Implementation of hook_perm().
+ */
+function partner_perm() {
+	return array(
+		'create partner',
+		'delete partner',
+		'edit partner',
+	);
+}
+
+/**
+ * Implementation of hook_access().
+ */
+function partner_access($op, $node, $account) {
+	if ($op == 'create') {
+		return user_access('create partner', $account);
+	}
+
+	if ($op == 'update') {
+    return user_access('edit partner', $account);
+	}
+
+	if ($op == 'delete') {
+    return user_access('delete partner', $account);
+	}
+}
+
+/**
+ * Implementation of hook_form().
+ */
+function partner_form(&$node) {
+	/**
+	 * The site admin can decide if this node type has a title and body, and how
+	 * the fields should be labeled. We need to load these settings so we can
+	 * build the node form correctly.
+	 */
+	$type = node_get_types('type', $node);
+
+	if ($type->has_title) {
+		$form['title'] = array(
+			'#type' => 'textfield',
+			'#title' => check_plain($type->title_label),
+			'#required' => TRUE,
+			'#default_value' => $node->title,
+			'#weight' => -5
+		);
+	}
+
+	if ($type->has_body) {
+		/**
+		 * In Drupal 6, we can use node_body_field() to get the body and filter
+		 * elements. This replaces the old textarea + filter_form() method of
+		 * setting this up. It will also ensure the teaser splitter gets set up properly.
+		 */
+		$form['body_field'] = node_body_field($node, $type->body_label, $type->min_word_count);
+	}
+
+	$form['url'] = array(
+		'#type' => 'textfield',
+		'#title' => t('URL'),
+		'#required' => FALSE,
+		'#default_value' => $node->url,
+		'#maxlength' => 100,
+	);
+
+	$form['#attributes'] = array(
+		'enctype' => 'multipart/form-data',
+	);
+
+	$form['logo'] = array(
+		'#type' => 'file',
+		'#title' => 'Logo',
+		'#description' => 'Please upload a logo with a size of 144x144',
+	);
+
+	return $form;
+}
+
+/**
+ * Implementation of hook_insert().
+ */
+function partner_insert($node) {
+	db_query("
+		INSERT INTO {partner}
+			(vid, nid, url)
+		VALUES
+			(%d, %d, '%s')",
+		$node->vid,
+		$node->nid,
+		$node->url
+	);
+
+  $id = db_last_insert_id('partner', 'nid');
+
+  partner_upload_logo($node, $id);
+
+  drupal_goto('partners');
+}
+
+/**
+ * Handles the upload of logo
+ */
+function partner_upload_logo($node, $id) {
+	$validators = array(
+		'file_validate_extensions' => array('jpg jpeg gif png'),
+		'file_validate_image_resolution' => array('96x160'),
+		'file_validate_size' => array((1*1024*1024), 0)
+	);
+
+	$extension = array(
+		'image/gif' => 'gif',
+		'image/jpeg'=> 'jpg',
+		'image/png' => 'png'
+	);
+
+	$file_directory_path = file_directory_path();
+	if ($file = file_save_upload('logo', $validators, $file_directory_path)) {
+		if ($node->logo) {
+			// delete the current logo
+			unlink($node->logo);
+		}
+		$filepath = "{$file_directory_path}/partner-{$id}.{$extension[$file->filemime]}";
+		rename($file->filepath, $filepath);
+		db_query(
+			"UPDATE {partner} SET logo = '%s' WHERE nid = %d",
+			$filepath,
+			$id
+		);
+	}
+}
+
+/**
+ * Implementation of hook_update().
+ */
+function partner_update($node) {
+	/* if this is a new node or we're adding a new revision. */
+	if ($node->revision) {
+		partner_insert($node);
+	} else {
+		db_query("
+			UPDATE {partner}
+			SET
+        url = '%s'
+			WHERE vid = %d",
+			$node->url,
+			$node->vid
+		);
+
+    	$id = db_last_insert_id('partner', 'vid');
+
+    	partner_upload_logo($node, $id);
+	}  
+}
+/**
+ * Implementation of hook_delete().
+ */
+function partner_delete($node) {
+	/* Notice that we're matching all revision, by using the node's nid. */
+  $n_champ = db_fetch_object(db_query("SELECT logo FROM {partner} WHERE nid = %d", $node->nid));
+
+  // Delete the actual file of the logo of the partner
+  if ($n_champ->logo) {
+    unlink($n_champ->logo);
+  }
+
+  // Delete the record or the partner
+	db_query('DELETE FROM {partner} WHERE nid = %d', $node->nid);
+}
+
+/**
+ * Implementation of hook_validate().
+ */
+function partner_validate(&$node) {
+	if ($node->url) {
+		if (!valid_url($node->url)) {
+			form_set_error('url', t('The URL you entered is invalid'));
+		}
+	}
+
+  // Partner name should be unique
+  /*
+  $result = db_fetch_object(db_query("SELECT title from {node} WHERE title = '%s' AND type = 'partner'", $node->title));
+  if ($result) {
+    form_set_error('title', t('Partner already exists.'));
+  }*/
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function partner_nodeapi(&$node, $op, $teaser, $page) {
+	switch ($op) {
+		case 'delete revision':		  
+      $n_champ = db_fetch_object(db_query("SELECT logo FROM {partner} WHERE vid = %d", $node->vid));
+
+      if ($n_champ->logo) {
+        unlink($n_champ->logo);
+      }
+      
+      /* Notice that we're matching a single revision based on the node's vid. */
+		  db_query('DELETE FROM {partner} WHERE vid = %d', $node->vid);
+		break;
+	}
+}
+
+/**
+ * Implementation of hook_view().
+ */
+function partner_view($node, $teaser = FALSE, $page = FALSE) {
+	$node = node_prepare($node, $teaser);
+	/*
+	$node->partner['test'] = array(
+		'#value' => theme('partner_node', $node),
+		'#weight' => 1,
+	);
+	*/
+	return $node;
+}
+
+/**
+ * Implementation of hook_load().
+ */
+function partner_load($node) {
+	$result = db_query("
+		SELECT
+			p.url,
+      p.logo,
+      n.title
+		FROM {partner} p
+    LEFT JOIN {node_revisions} n
+    ON p.nid = n.nid
+		WHERE n.nid = %d",
+		$node->nid
+	);
+	$additions = db_fetch_object($result);
+	return $additions;
+}
+/** END OF partner-TYPE HOOKS **/
+
+/**
+ * Implementation of hook_init().
+ */
+function partner_init() {
+	drupal_add_css(drupal_get_path('module', 'partner') .'/partner.css');
+}
+
+/**
+ * Implementation of hook_footer().
+ */
+function partner_footer($main = 0) {
+	if ($main) {
+		$output = '<div class="main"></div>';
+	} else {
+		$output = '<div class="sub"></div>';
+	}
+	return $output;
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function partner_menu() {
+	$items['admin/settings/partners'] = array(
+		'title' => 'Partner',
+		'description' => t('Partner settings'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('partner_settings'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+  $items['partners'] = array(
+		'title' => 'Partners',
+		'page callback' => 'partner_list',
+		'page arguments' => NULL,
+    'access callback' =>  TRUE,
+		'type' => MENU_NORMAL_ITEM,
+		'weight' => 1,
+	);
+
+  return $items;
+}
+
+/**
+ * Implementation of hook_settings().
+ */
+function partner_settings() {
+	$form["partner_how_to_help"] = array(
+		'#type' => 'textarea',
+		'#title' => 'How can you help the cause',
+		'#default_value' => variable_get("partner_how_to_help", ''),
+	);
+	return system_settings_form($form);
+}
+
+/**
+ * Returns the list of all partners
+ */
+function partner_list() {
+  $result = db_query("SELECT p.url, p.logo, n.title FROM {partner} p LEFT JOIN {node} n ON p.nid = n.nid ORDER BY n.nid");
+	$partners = array();
+
+	while ($row = db_fetch_object($result)) {
+		$partners[] = $row;
+	}
+
+	$content = theme('partner_list_tpl', $partners);
+  return theme('partner_theme_tpl', $content);
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function partner_theme() {
+	return array(
+		'partner' => array(
+			'template' => 'partner',
+			'arguments' => array('node'),
+		),
+		'node' => array(
+      'template' => 'node-partner',
+			'arguments' => array('node' => NULL, 'teaser' => FALSE, 'page' => FALSE),
+		),
+    'partner_list_tpl' => array(
+      'template' => 'partner-list',
+      'arguments' => array('partners' => NULL),
+    ),
+    'partner_theme_tpl' => array(
+      'template' => 'partner-theme',
+      'arguments' => array('content' => NULL),
+    ),
+	);
+}
+
+/**
+ * Implementation of hook_user().
+ */
+function partner_user($op, &$edit, &$account, $category = NULL) {
+	
+}
+
+/* do not close php ?> */

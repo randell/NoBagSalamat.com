@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/designbrew_nbs/!svn/ver/1/modules/dblog
+END
+dblog.info
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/designbrew_nbs/!svn/ver/1/modules/dblog/dblog.info
+END
+dblog.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/dblog/dblog.admin.inc
+END
+dblog.module
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/1/modules/dblog/dblog.module
+END
+dblog.install
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/dblog/dblog.install
+END
+dblog-rtl.css
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/dblog/dblog-rtl.css
+END
+dblog.css
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/designbrew_nbs/!svn/ver/1/modules/dblog/dblog.css
+END

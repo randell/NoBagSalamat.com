@@ -1,0 +1,62 @@
+<?php
+/**
+ * @file news.install
+ * author: Randell Benavidez (randell@randell.ph)
+ * date-created: 20081020
+ * date-updated: year-mm-dd "name" "description"
+ */
+
+/**
+ * Implementation of hook_enable().
+ */
+function news_enable() {
+	drupal_set_message("News module was enabled.");
+}
+
+/**
+ * Implementation of hook_disable().
+ */
+function news_disable() {
+	drupal_set_message("News module was disabled.");
+}
+
+/**
+ * Implementation of hook_schema()
+ */
+function news_schema() {
+	$schema['news'] = array(
+		'fields' => array(
+			'vid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+			'nid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0),
+			'country' => array('type' => 'varchar', 'length' => 100, 'default' => ''),
+			'url' => array('type' => 'varchar', 'length' => 500, 'default' => ''),
+			'source' => array('type' => 'varchar', 'length' => 500, 'default' => '')
+		),
+		'indexes' => array(
+			'nid' => array('nid'),
+		),
+		'primary key' => array('vid'),
+	);
+
+	return $schema;
+}
+
+/**
+ * Implementation of hook_install()
+ */
+function news_install() {
+	// Create tables.
+	drupal_install_schema('news');
+
+	drupal_set_message('extended table for news has been created');
+}
+
+/**
+ * Implementation of hook_uninstall()
+ */
+function news_uninstall() {
+	// Remove tables.
+	drupal_uninstall_schema('news');
+}
+
+/* do not close php ?>*/

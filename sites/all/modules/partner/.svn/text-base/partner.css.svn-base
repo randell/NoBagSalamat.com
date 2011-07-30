@@ -1,0 +1,44 @@
+/**
+ * @file partner.css
+ * author Randell Benavidez (randell@randell.ph)
+ * date created: 20081015
+ * date modified: 
+ */
+.partner {
+  width: 512px;
+  padding: 0 0 0 30px;
+}
+.partners-header {
+  padding-top: 50px;
+}
+.clear {
+  clear: both;
+}
+.partners {  
+  width: 512px;
+  padding: 0 0 0 30px;
+  margin-top: 50px;
+  margin-left: 0px;
+}
+.logo144 {
+  width: 144px;
+  height: 144px;
+  margin-top: 27px;
+  margin-left: 0px;
+  margin-right: 22px;
+  display: inline;
+}
+.logo144 img {
+  width: 144px;
+  height: 144px;
+  border: 2px solid #ddd;
+}
+.partners-left {
+  float: left;
+}
+.partners-right {
+  float: right;
+  margin-top: 120px;
+  width: 228px;
+  padding-right: 30px;
+}

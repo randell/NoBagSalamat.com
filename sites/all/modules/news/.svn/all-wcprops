@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/designbrew_nbs/!svn/ver/45/sites/all/modules/news
+END
+news-theme.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/designbrew_nbs/!svn/ver/18/sites/all/modules/news/news-theme.tpl.php
+END
+news.module
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/designbrew_nbs/!svn/ver/48/sites/all/modules/news/news.module
+END
+news.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/designbrew_nbs/!svn/ver/44/sites/all/modules/news/news.tpl.php
+END
+news.install
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/designbrew_nbs/!svn/ver/41/sites/all/modules/news/news.install
+END
+news.css
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/designbrew_nbs/!svn/ver/42/sites/all/modules/news/news.css
+END
+node-news.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/designbrew_nbs/!svn/ver/41/sites/all/modules/news/node-news.tpl.php
+END
+news.info
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/designbrew_nbs/!svn/ver/18/sites/all/modules/news/news.info
+END
+news-list.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/designbrew_nbs/!svn/ver/48/sites/all/modules/news/news-list.tpl.php
+END

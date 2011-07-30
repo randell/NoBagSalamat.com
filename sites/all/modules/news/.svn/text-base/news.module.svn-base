@@ -1,0 +1,409 @@
+<?php
+/**
+ * @file news.module
+ * author: Randell Benavidez (randell@randell.ph)
+ * date-created: 20080918
+ * date-updated: year-mm-dd "name" "description"
+ */
+
+/**
+required hooks for new node-type:
+	* hook_node_info()
+	* hook_perm()
+	* hook_access()
+	* hook_form()
+	* hook_insert()
+	* hook_update()
+	* hook_delete()
+	* hook_validate()
+	* hook_nodeapi()
+	* hook_view()
+	* hook_load()
+*/
+
+/**
+ * Implementation of hook_node_info().
+ */
+function news_node_info() {
+	return array(
+		'news' => array(
+			'name' => t('News'),
+			'module' => 'news',
+			'description' => t("Create a new news using this News content-type"),
+			'has_title' => TRUE, 
+			'title_label' => t('Name'),
+			'has_body' => TRUE,
+			'body_label' => t('Body'),
+			'locked' => TRUE,
+		)
+	);
+}
+
+/**
+ * Implementation of hook_perm().
+ */
+function news_perm() {
+	return array(
+		'create news',
+		'delete news',
+		'edit news',
+	);
+}
+
+/**
+ * Implementation of hook_access().
+ */
+function news_access($op, $node, $account) {
+	if ($op == 'create') {
+		return user_access('create news', $account);
+	}
+
+	if ($op == 'update') {
+		return user_access('edit news', $account);
+	}
+
+	if ($op == 'delete') {
+		return user_access('delete news', $account);
+	}
+}
+
+/**
+ * Implementation of hook_form().
+ */
+function news_form(&$node) {
+	/**
+	 * The site admin can decide if this node type has a title and body, and how
+	 * the fields should be labeled. We need to load these settings so we can
+	 * build the node form correctly.
+	 */
+	$type = node_get_types('type', $node);
+
+	if ($type->has_title) {
+		$form['title'] = array(
+			'#type' => 'textfield',
+			'#title' => check_plain($type->title_label),
+			'#required' => TRUE,
+			'#default_value' => $node->title,
+			'#weight' => -5
+		);
+	}
+
+	if ($type->has_body) {
+		/**
+		 * In Drupal 6, we can use node_body_field() to get the body and filter
+		 * elements. This replaces the old textarea + filter_form() method of
+		 * setting this up. It will also ensure the teaser splitter gets set up properly.
+		 */
+		$form['body_field'] = node_body_field($node, $type->body_label, $type->min_word_count);
+	}
+
+	$form['url'] = array(
+		'#type' => 'textfield',
+		'#title' => t('URL'),
+		'#required' => TRUE,
+		'#default_value' => $node->url,
+		'#maxlength' => 500,
+	);
+
+	$form['source'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Source'),
+		'#required' => TRUE,
+		'#default_value' => $node->source,
+		'#maxlength' => 500,
+	);
+
+	return $form;
+}
+
+/**
+ * Implementation of hook_insert().
+ */
+function news_insert($node) {
+	if (strcmp(substr($node->url, 0, 7), "http://") != 0) {
+		$node->url = "http://" . $node->url;
+	}
+
+	db_query("
+		INSERT INTO {news}
+			(vid, nid, country, url, source)
+		VALUES
+			(%d, %d, '%s', '%s', '%s')",
+			$node->vid,
+			$node->nid,
+			$node->taxonomy[1],
+			$node->url,
+			$node->source
+	);
+}
+
+/**
+ * Implementation of hook_update().
+ */
+function news_update($node) {
+	if (strcmp(substr($node->url, 0, 7), "http://") != 0) {
+		$node->url = "http://" . $node->url;
+	}
+
+	/* if this is a new node or we're adding a new revision. */
+	if ($node->revision) {
+		news_insert($node);
+	} else {
+		db_query("
+			UPDATE {news}
+			SET
+				country = '%s',
+				url = '%s',
+				source = '%s'
+			WHERE vid = %d",
+				$node->taxonomy[1],
+				$node->url,
+				$node->source,
+				$node->vid
+		);
+	}  
+}
+/**
+ * Implementation of hook_delete().
+ */
+function news_delete($node) {
+	/* Notice that we're matching all revision, by using the node's nid. */
+	db_query('DELETE FROM {news} WHERE nid = %d', $node->nid);
+}
+
+/**
+ * Implementation of hook_validate().
+ */
+function news_validate(&$node) {
+	if ($node->url) {
+		if (!valid_url($node->url)) {
+			form_set_error('url', t('The URL you entered is invalid'));
+		}
+	}
+
+	// news name should be unique
+	/*
+	$result = db_fetch_object(db_query("SELECT title from {node} WHERE title = '%s' AND type = 'news'", $node->title));
+	if ($result) {
+		form_set_error('title', t('News already exists.'));
+	}*/
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function news_nodeapi(&$node, $op, $teaser, $page) {
+	switch ($op) {
+		case 'delete revision':
+			/* Notice that we're matching a single revision based on the node's vid. */
+			db_query('DELETE FROM {news} WHERE vid = %d', $node->vid);
+			break;
+	}
+}
+
+/**
+ * Implementation of hook_view().
+ */
+function news_view($node, $teaser = FALSE, $page = FALSE) {
+	$node = node_prepare($node, $teaser);
+
+	return $node;
+}
+
+/**
+ * Implementation of hook_load().
+ */
+function news_load($node) {
+	$additions = news_object($node);
+	$additions->news_philippines = news_philippines(5);
+	$additions->news_around_the_world = news_around_the_world(5);
+
+	return $additions;
+}
+
+function news_object($node) {
+	$result = db_query("
+		SELECT 
+			c.country, c.url, c.source,
+			n.nid, n.title, n.body,
+			u.dst, 
+			t.name
+		FROM 
+			nbs_news c, 
+			nbs_node_revisions n, 
+			nbs_url_alias u,
+			nbs_term_data t
+		WHERE 
+			c.nid = n.nid 
+			AND u.src LIKE CONCAT('node/',n.nid) 
+			AND c.nid = %d
+			AND c.country = t.tid
+		ORDER BY
+			n.nid DESC",
+		$node->nid
+	);
+	return db_fetch_object($result);
+}
+
+/** END OF news-TYPE HOOKS **/
+
+/**
+ * Implementation of hook_init().
+ */
+function news_init() {
+	drupal_add_css(drupal_get_path('module', 'news') .'/news.css');
+}
+
+/**
+ * Implementation of hook_footer().
+ */
+function news_footer($main = 0) {
+	if ($main) {
+		$output = '<div class="main"></div>';
+	} else {
+		$output = '<div class="sub"></div>';
+	}
+	return $output;
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function news_menu() {
+	/*
+	$items['admin/settings/news'] = array(
+		'title' => 'News',
+		'description' => t('News settings'),
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('news_settings'),
+		'access arguments' => array('access administration pages'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+	*/
+	$items['news'] = array(
+		'title' => 'Learning From Others',
+		'page callback' => 'news_list',
+		'page arguments' => NULL,
+    	'access callback' =>  TRUE,
+		'type' => MENU_NORMAL_ITEM,
+		'weight' => 1,
+	);
+
+  return $items;
+}
+
+/**
+ * Returns the list of all news
+ */
+function news_list() {
+	$news = news_all();
+	$news_philippines = news_philippines(10);
+	$news_around_the_world = news_around_the_world(10);
+
+	$content = theme('news_list_tpl', $news, $news_philippines, $news_around_the_world);
+	return theme('news_theme_tpl', $content);
+}
+
+function news_all() {
+	$all = "SELECT nid FROM {news} ORDER BY nid DESC";
+	$all_count = "SELECT COUNT(*) FROM {news}";
+
+	$result = pager_query($all, 5, 0, $all_count);
+	$news = array();
+	while ($row = db_fetch_object($result)) {
+		$article = news_object($row);
+		$news[] = $article;
+	}
+
+	return $news;
+}
+
+/**
+ *
+ */
+function news_philippines($limit) {
+	$result_philippines = db_query("
+		SELECT
+			c.url, c.source,
+			n.nid, n.title,
+			u.dst
+		FROM 
+			nbs_news c, 
+			nbs_node_revisions n, 
+			nbs_url_alias u
+		WHERE 
+			c.nid = n.nid 
+		AND u.src LIKE CONCAT('node/',n.nid) 
+		AND c.country = 1
+		ORDER BY n.nid DESC
+		LIMIT ".$limit
+	);
+	while ($row = db_fetch_object($result_philippines)) {
+		$news_philippines[] = $row;
+	}
+
+	return $news_philippines;
+}
+
+/**
+ *
+ */
+function news_around_the_world($limit) {
+	$result_around_the_world = db_query("
+		SELECT
+			c.url, c.source, 
+			n.nid, n.title,
+			u.dst, 
+			t.name
+		FROM 
+			nbs_news c, 
+			nbs_node_revisions n, 
+			nbs_url_alias u,
+			nbs_term_data t
+		WHERE 
+			c.nid = n.nid 
+		AND u.src LIKE CONCAT('node/',n.nid) 
+		AND c.country != 1
+		AND c.country = t.tid
+		ORDER BY n.nid DESC
+		LIMIT " . $limit
+	);
+	while ($row = db_fetch_object($result_around_the_world)) {
+		$news_around_the_world[] = $row;
+	}
+
+	return $news_around_the_world;
+}
+
+/**
+ * Implementation of hook_theme().
+ */
+function news_theme() {
+	return array(
+		'news' => array(
+			'template' => 'news',
+			'arguments' => array('node'),
+		),
+		'node' => array(
+			'template' => 'node-news',
+			'arguments' => array('node' => NULL, 'teaser' => FALSE, 'page' => FALSE),
+		),
+		'news_list_tpl' => array(
+			'template' => 'news-list',
+			'arguments' => array('news' => NULL, 'news_philippines' => NULL, 'news_around_the_world' => NULL),
+		),
+		'news_theme_tpl' => array(
+			'template' => 'news-theme',
+			'arguments' => array('content' => NULL),
+		),
+	);
+}
+
+/**
+ * Implementation of hook_user().
+ */
+function news_user($op, &$edit, &$account, $category = NULL) {
+	
+}
+
+/* do not close php ?> */

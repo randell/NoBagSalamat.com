@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/designbrew_nbs/!svn/ver/1/modules/block
+END
+block.install
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/designbrew_nbs/!svn/ver/1/modules/block/block.install
+END
+block.css
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/designbrew_nbs/!svn/ver/1/modules/block/block.css
+END
+block.info
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/designbrew_nbs/!svn/ver/1/modules/block/block.info
+END
+block.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/designbrew_nbs/!svn/ver/1/modules/block/block.js
+END
+block-admin-display-form.tpl.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/designbrew_nbs/!svn/ver/1/modules/block/block-admin-display-form.tpl.php
+END
+block.admin.inc
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/designbrew_nbs/!svn/ver/1/modules/block/block.admin.inc
+END
+block.module
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/designbrew_nbs/!svn/ver/1/modules/block/block.module
+END

@@ -1,0 +1,46 @@
+<?php
+/**
+ * @file: main.module
+ * author: Randell Benavidez (randell@randell.ph)
+ *
+ */
+
+function main_perm() {
+	return array(
+		'access main',
+		'administer main',
+	);
+}
+
+function main_menu() {
+	$items = array();
+
+	$items['admin/settings/main'] = array(
+		'title' => 'main',
+		'description' => 'Site specific settings',
+		'page callback' => 'drupal_get_form',
+		'page arguments' => array('main_settings'),
+		'access arguments' => array('administer main'),
+		'type' => MENU_NORMAL_ITEM,
+	);
+
+	return $items;
+}
+
+function main_settings() {
+	$form['number_of_individuals_who_pledged'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Number of individuals who made the pledge'),
+		'#default_value' => variable_get('number_of_individuals_who_pledged', '1'),
+		'#description' => t('Number of individuals who made the pledge')
+	);
+
+	$form['combined_days_to_live_disposable_bag_free'] = array(
+		'#type' => 'textfield',
+		'#title' => t('Combined number of days to live disposable bag-free'),
+		'#default_value' => variable_get('combined_days_to_live_disposable_bag_free', '1'),
+		'#description' => t('Combined number of days to live disposable bag-free')
+	);
+
+	return system_settings_form($form);
+}
